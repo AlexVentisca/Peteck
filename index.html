@@ -83,4 +83,29 @@
       }
     });
   </script>
+
+<script>
+    const svgObject2 = document.getElementById('svgPlayer');
+    const audio2 = document.getElementById('myAudio');
+  
+    svgObject.addEventListener('load', () => {
+      const svgDoc2 = svgObject.contentDocument;
+      const playButton2 = svgDoc.getElementById('playButton2');
+  
+      if (playButton2) {
+        playButton.style.cursor = 'pointer';
+        playButton.addEventListener('click', () => {
+          if (audio2.paused) {
+            audio2.play();
+          } else {
+            audio2.pause();
+          }
+        });
+      } else {
+        console.error("playButton not found in SVG.");
+      }
+    });
+  </script>
+
+  
   
