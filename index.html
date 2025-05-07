@@ -1,36 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Play Music</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Gallery</title>
   <style>
-    #playIcon {
-      width: 60px;
-      height: 60px;
-      cursor: pointer;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .svg-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .svg-container object {
+      width: 100px;
+      height: 100px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Clickable SVG icon -->
-  <img id="playIcon" src="Group 30.svg" alt="Play" />
+  <h1>SVG Gallery</h1>
+  <div class="svg-container">
+<object type="image/svg+xml" data="assets/intro.svg">intro.svg</object>
+<object type="image/svg+xml" data="assets/silhouette2.svg">silhouette2.svg</object>
+<object type="image/svg+xml" data="assets/song1s.svg">song1s.svg</object>
+<object type="image/svg+xml" data="assets/silhouette3.svg">silhouette3.svg</object>
+<object type="image/svg+xml" data="assets/silhouette1.svg">silhouette1.svg</object>
+<object type="image/svg+xml" data="assets/Group 2.svg">Group 2.svg</object>
+<object type="image/svg+xml" data="assets/wrong answer page.svg">wrong answer page.svg</object>
+<object type="image/svg+xml" data="assets/Frame 1.svg">Frame 1.svg</object>
+<object type="image/svg+xml" data="assets/Start.svg">Start.svg</object>
+<object type="image/svg+xml" data="assets/image 1.svg">image 1.svg</object>
+<object type="image/svg+xml" data="assets/song1.svg">song1.svg</object>
+<object type="image/svg+xml" data="assets/expo2.svg">expo2.svg</object>
+<object type="image/svg+xml" data="assets/song2s.svg">song2s.svg</object>
+<object type="image/svg+xml" data="assets/song2.svg">song2.svg</object>
+<object type="image/svg+xml" data="assets/expo1.svg">expo1.svg</object>
+<object type="image/svg+xml" data="assets/Pasword1.svg">Pasword1.svg</object>
+<object type="image/svg+xml" data="assets/intro3.svg">intro3.svg</object>
+<object type="image/svg+xml" data="assets/intro2.svg">intro2.svg</object>
+<object type="image/svg+xml" data="assets/fin.svg">fin.svg</object>
 
-  <!-- Audio file -->
-  <audio id="music" src="Hatsune-Miku-Ievan-Polkka.mp3" preload="auto"></audio>
-
-  <script>
-    const icon = document.getElementById('playIcon');
-    const music = document.getElementById('music');
-
-    icon.addEventListener('click', () => {
-      if (music.paused) {
-        music.play();
-      } else {
-        music.pause();
-      }
-    });
-  </script>
-
+  </div>
 </body>
 </html>

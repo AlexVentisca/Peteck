@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Play Music</title>
+  <style>
+    #playIcon {
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Clickable SVG icon -->
+  <img id="playIcon" src="Group 30.svg" alt="Play" />
+
+  <!-- Audio file -->
+  <audio id="music" src="Hatsune-Miku-Ievan-Polkka.mp3" preload="auto"></audio>
+
+  <script>
+    const icon = document.getElementById('playIcon');
+    const music = document.getElementById('music');
+
+    icon.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    });
+  </script>
+
+</body>
+</html>
