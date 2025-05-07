@@ -76,6 +76,7 @@
         playButton.style.cursor = 'pointer';
         playButton.addEventListener('click', () => {
           if (audio.paused) {
+            audio2.pause();
             audio.play();
           } else {
             audio.pause();
@@ -99,6 +100,7 @@
             playButton2.style.cursor = 'pointer';
             playButton2.addEventListener('click', () => {
             if (audio2.paused) {
+                audio1.pause();
                 audio2.play();
             } else {
                 audio2.pause();
