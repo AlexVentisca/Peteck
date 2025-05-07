@@ -90,24 +90,25 @@
 <script>
     const svgObject2 = document.getElementById('svgPlayer2');
     const audio2 = document.getElementById('myAudio2');
-  
+
     svgObject2.addEventListener('load', () => {
-      const svgDoc2 = svgObject2.contentDocument;
-      const playButton2 = svgDoc2.getElementById('playButton2');
-  
-      if (playButton2) {
-        playButton2.style.cursor = 'pointer';
-        playButton2.addEventListener('click', () => {
-          if (audio2.paused) {
-            audio2.play();
-          } else {
-            audio2.pause();
-          }
-        });
-      } else {
-        console.error("playButton not found in SVG.");
-      }
+        const svgDoc2 = svgObject2.contentDocument;
+        const playButton2 = svgDoc2.getElementById('playButton'); // Not 'playButton2'
+
+        if (playButton2) {
+            playButton2.style.cursor = 'pointer';
+            playButton2.addEventListener('click', () => {
+            if (audio2.paused) {
+                audio2.play();
+            } else {
+                audio2.pause();
+            }
+            });
+        } else {
+            console.error("playButton not found in second SVG.");
+        }
     });
+
   </script>
 
   
