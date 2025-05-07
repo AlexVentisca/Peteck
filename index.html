@@ -44,7 +44,7 @@
 <object type="image/svg+xml" data="assets/Frame 1.svg">Frame 1.svg</object>
 <object type="image/svg+xml" data="assets/Start.svg">Start.svg</object>
 <object type="image/svg+xml" data="assets/image 1.svg">image 1.svg</object>
-<object type="image/svg+xml" data="assets/song1.svg">song1.svg</object>
+
 <object type="image/svg+xml" data="assets/expo2.svg">expo2.svg</object>
 <object type="image/svg+xml" data="assets/song2s.svg">song2s.svg</object>
 <object type="image/svg+xml" data="assets/song2.svg">song2.svg</object>
@@ -54,6 +54,33 @@
 <object type="image/svg+xml" data="assets/intro2.svg">intro2.svg</object>
 <object type="image/svg+xml" data="assets/fin.svg">fin.svg</object>
 
+<object id="svgPlayer" type="image/svg+xml" data="assets/song1.svg">song1.svg</object>
+<audio id="myAudio" src="Hatsune-Miku-Ievan-Polkka.mp3"></audio>
+
   </div>
 </body>
 </html>
+
+<script>
+    const svgObject = document.getElementById('svgPlayer');
+    const audio = document.getElementById('myAudio');
+  
+    svgObject.addEventListener('load', () => {
+      const svgDoc = svgObject.contentDocument;
+      const playButton = svgDoc.getElementById('playButton');
+  
+      if (playButton) {
+        playButton.style.cursor = 'pointer';
+        playButton.addEventListener('click', () => {
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
+        });
+      } else {
+        console.error("playButton not found in SVG.");
+      }
+    });
+  </script>
+  
