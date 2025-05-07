@@ -54,64 +54,62 @@
 <object type="image/svg+xml" data="assets/intro2.svg">intro2.svg</object>
 <object type="image/svg+xml" data="assets/fin.svg">fin.svg</object>
 
+
+
 <object id="svgPlayer" type="image/svg+xml" data="assets/song1.svg">song1.svg</object>
 <audio id="myAudio" src="Hatsune-Miku-Ievan-Polkka.mp3"></audio>
 
 <object id="svgPlayer2" type="image/svg+xml" data="assets/song2s.svg">song2s.svg</object>
 <audio id="myAudio2" src="Hand-in-Hand.mp3"></audio>
 
-  </div>
-</body>
-</html>
-
 <script>
-    const svgObject = document.getElementById('svgPlayer');
-    const audio = document.getElementById('myAudio');
-  
-    svgObject.addEventListener('load', () => {
-      const svgDoc = svgObject.contentDocument;
-      const playButton = svgDoc.getElementById('playButton');
-  
-      if (playButton) {
-        playButton.style.cursor = 'pointer';
-        playButton.addEventListener('click', () => {
-          if (audio.paused) {
-            audio2.pause();
-            audio.play();
-          } else {
-            audio.pause();
-          }
-        });
-      } else {
-        console.error("playButton not found in SVG.");
-      }
-    });
-  </script>
+  const svgObject = document.getElementById('svgPlayer');
+  const audio = document.getElementById('myAudio');
+  const audio2 = document.getElementById('myAudio2');
 
-<script>
-    const svgObject2 = document.getElementById('svgPlayer2');
-    const audio2 = document.getElementById('myAudio2');
+  svgObject.addEventListener('load', () => {
+    const svgDoc = svgObject.contentDocument;
+    const playButton = svgDoc.getElementById('playButton');
 
-    svgObject2.addEventListener('load', () => {
-        const svgDoc2 = svgObject2.contentDocument;
-        const playButton2 = svgDoc2.getElementById('playButton'); // Not 'playButton2'
-
-        if (playButton2) {
-            playButton2.style.cursor = 'pointer';
-            playButton2.addEventListener('click', () => {
-            if (audio2.paused) {
-                audio1.pause();
-                audio2.play();
-            } else {
-                audio2.pause();
-            }
-            });
+    if (playButton) {
+      playButton.style.cursor = 'pointer';
+      playButton.addEventListener('click', () => {
+        if (audio.paused) {
+          audio2.pause();
+          audio.play();
         } else {
-            console.error("playButton not found in second SVG.");
+          audio.pause();
         }
-    });
+      });
+    } else {
+      console.error("playButton not found in song1.svg.");
+    }
+  });
+</script>
 
-  </script>
+<script>
+  const svgObject2 = document.getElementById('svgPlayer2');
+
+  svgObject2.addEventListener('load', () => {
+    const svgDoc2 = svgObject2.contentDocument;
+    const playButton2 = svgDoc2.getElementById('playButton'); // same ID in both
+
+    if (playButton2) {
+      playButton2.style.cursor = 'pointer';
+      playButton2.addEventListener('click', () => {
+        if (audio2.paused) {
+          audio.pause(); // fixed name
+          audio2.play();
+        } else {
+          audio2.pause();
+        }
+      });
+    } else {
+      console.error("playButton not found in song2s.svg.");
+    }
+  });
+</script>
+
 
   
   
